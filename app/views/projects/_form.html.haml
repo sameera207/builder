@@ -1,0 +1,16 @@
+= form_for @project, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :local_path, :class => 'control-label'
+    .controls
+      = f.text_field :local_path, :class => 'text_field'
+  .control-group
+    = f.label :command, :class => 'control-label'
+    .controls
+      = f.text_field :command, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), projects_path, :class => 'btn'

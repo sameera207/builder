@@ -1,0 +1,18 @@
+.row
+  %div{:id => 'form', :class => 'span8'}
+    =render :partial => 'form'
+  %div{:id => 'notification', :class => 'span8.alert.alert-info'}
+    Build started....
+.row
+  .span8
+    %table{:class => 'table table-striped'}
+      - @builds.each do |build|
+        %tr
+          %td= build.branch_name
+          %td= format_date_time build.started_at if build.started_at
+          %td= format_date_time build.completed_at if build.completed_at
+
+.row
+  .span8.alert.alert-error
+    %div{:id => 'messages', :class => 'console'}
+
